@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">          
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href=""
+  </head>
+  <body>
+    <table id="calculator" border="4" align="center">
+      <th colspan="4">
+        <input id="display" type="text" disabled placeholder="0" /> 
+      </th>
+
+
+      <tr align="center" >
+          <td><button id="num7">7</button></td>
+           <td> <button id="num8">8</button></td>
+            <td><button id="num9">9</button></td>
+            <td><button id="decimal">.</button></td>
+            <!-- <td><button id="clear">C</button></td> -->
+        </tr>
+
+        <tr align="center">
+        <td><button id="num4">4</button></td>
+       <td><button id="num5">5</button></td>
+        <td><button id="num6">6</button></td>
+        <td><button id="add">+</button></td>
+        </tr>
+        
+        <tr align="center">
+            <td><button id="num1">1</button></td>
+              <td><button id="num2">2</button></td>
+                <td><button id="num3">3</button></td>
+                <td><button id="subtract">-</button></td>
+        </tr>
+
+        <tr align="center">
+          <td><button id="multiply">*</button></td>
+          <td><button id="divide">/</button></td>
+          <td><button id="num0">0</button></td>
+          <td><button id="equals">=</button></td>
+        </tr>
+        
+        
+        
+        
+        
+        
+        
+      </tr>
+    </table>
+    <script>
+      let display = document.getElementById("display");
+      let num1 = "";
+      let num2 = "";
+      let operator = "";
+      let result = "";
+
+     //document.getElementById("clear").addEventListener("click", clear);
+      document.getElementById("equals").addEventListener("click", calculate);
+      document
+        .getElementById("add")
+        .addEventListener("click", () => setOperator("+"));
+      document
+        .getElementById("subtract")
+        .addEventListener("click", () => setOperator("-"));
+      document
+        .getElementById("multiply")
+        .addEventListener("click", () => setOperator("*"));
+      document
+        .getElementById("divide")
+        .addEventListener("click", () => setOperator("/"));
+        document
+        .getElementById('decimal')
+        .addEventListener('click', () => appendDecimal("."));
+
+      for (let i = 0; i <= 9; i++) {
+        document
+          .getElementById(`num${i}`)
+          .addEventListener("click", () => appendNumber(i));
+      }
+
+      function clear() {
+        num1 = "";
+        num2 = "";
+        operator = "";
+        result = "";
+        display.value = "";
+      }
+
+      function calculate() {
+        num2 = display.value;
+        result = eval(`${num1} ${operator} ${num2}`);
+        display.value = result;
+        num1 = result;
+        num2 = "";
+        operator = "";
+      }
+
+      function setOperator(op) {
+        operator = op;
+        num1 = display.value;
+        display.value = "";
+      }
+
+      function appendNumber(num) {
+        display.value += num;
+      }
+
+      function appendDecimal(){
+        if(!display.value.includes(".")){
+          display.value+=".";
+        }
+      }
+    </script>
+  </body>
+</html>

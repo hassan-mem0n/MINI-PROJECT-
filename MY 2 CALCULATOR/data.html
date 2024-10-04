@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <table border="4" align="center">
+        <th colspan="4"><input type="text" name="" id="screen" placeholder="0"></th>
+        <tr align="center">
+            <td><button class="operator ac">AC</button></td>
+            <td><button class="operator del">DEL</button></td>
+            <td><button class="operator">%</button></td>
+            <td><button class="operator">/</button></td>
+        </tr>
+        <tr align="center">
+            <td><button >7</button></td>
+            <td><button >8</button></td>
+            <td><button >9</button></td>
+            <td><button class="operator">*</button></td>
+        </tr>
+        <tr align="center">
+            <td><button >4</button></td>
+            <td><button >5</button></td>
+            <td><button >6</button></td>
+            <td><button class="operator">-</button></td>
+        </tr>
+        <tr align="center">
+            <td><button >3</button></td>
+            <td><button >2</button></td>
+            <td><button >1</button></td>
+            <td><button class="operator">+</button></td>
+        </tr>
+        <tr align="center">
+            <td><button>00</button></td>
+            <td><button>0</button></td>
+            <td><button>.</button></td>
+            <td><button class="equalbtn">=</button></td>
+        </tr> -->
+    <!-- </table> -->
+
+    <div class="calculator">
+      <input type="text" name="" id="inputbox" placeholder="0"readonly>
+    </div>
+
+    <div>
+        <button class="operator ac">AC</button>
+            <button class="operator del">DEL</button>
+           <button class="operator">%</button>
+            <button class="operator">/</button>
+</div>
+
+<div>
+    <button >7</button>
+    <button >8</button>
+    <button >9</button>
+    <button class="operator">*</button>
+</div>
+
+<div>
+    <button >4</button>
+    <button >5</button>
+    <button >6</button>
+    <button class="operator">-</button>
+
+<div>
+    <button >3</button>
+    <button >2</button>
+    <button >1</button>
+    <button class="operator">+</button>
+</div>
+
+
+<div>
+    <button >00</button>
+    <button >0</button>
+    <button >.</button>
+    <button class="equalbtn">=</button>
+</div>
+
+<script>
+let display = document.getElementById("inputbox");
+let buttons =document.querySelectorAll('buttons');
+
+let buttonsArry = Array.from('buttons');
+
+ let: String = '';
+
+buttonsArry.forEach(btn => {
+  if(e.target.innerHTML == '')
+ btn.addEventListener(click,(e){
+    String += event.target.innerHTML;
+    display.value = String;
+
+   
+ })
+});
+
+</script>
+</body>
+</html>
